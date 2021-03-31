@@ -40,7 +40,7 @@
     <div id="search" class="row ml-5 justify-content-center">
     	<div class="col-md-6">
         <div>
-        <h1 class="text-center mb-5" style="color: grey;"><i class="fa fa-search"></i> Livesearch</h1>
+        <h1 class="text-center mb-5 pt-5" style="color: grey; padding-top: 200px;"><i class="fa fa-search"></i> Livesearch</h1>
         </div>
     		<div class="input-group">
     			<input wire:model="search" type="text" class="form-control shadow p-3 mb-5 bg-white rounded" placeholder="Search" aria-label="search" ariadescribedby="basic-addon1">
@@ -61,9 +61,9 @@
     
 
     <section class="products mb-5 mt-4">
-      <div class="container-fluid mt-5">
-          <h1 class="text-center mt-4" style="color: grey;"><i class="fa fa-shopping-cart"></i> Products</h1>
-    	<div id="belanja" class="row mt-4">
+      <div id="belanja" class="container-fluid mt-5">
+          <h1 class="text-center mb-5 pt-5" style="color: grey;"><i class="fa fa-shopping-cart"></i> Products</h1>
+    	<div class="row mt-4">
     		@foreach($products as $product)
     		<div class="col-md-3 mb-3 mt-5">
     		<div class="shadow p-3 mb-5 bg-white rounded" >
