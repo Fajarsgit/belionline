@@ -21,6 +21,9 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <livewire:scripts/>
     <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false" data-turbo-eval="false"></script>
@@ -31,16 +34,19 @@
       html, body {
       max-width: 100%;
       overflow-x: hidden;
+      scroll-behavior: smooth;
       }
 
       .paragraph {
       width: 150%;
+
+
       }
 </style>
 </head>
-<body>
+<body id="home">
     <div id="app" style="">
-        <nav class="navbar navbar-expand-md navbar-dark  shadow-sm fixed-top shadow p-3 mb-5  rounded" style="background-color: #1fc7ff;">
+        <nav class="navbar navbar-expand-md navbar-dark  shadow-sm fixed-top shadow p-3 mb-5  rounded tab-pane fade show active" style="background-color: #1fc7ff;">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -61,10 +67,13 @@
                         <li class="nav-item">
                                     <a class="nav-link text-white" href="{{ url('') }}">{{ ('Home') }}</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="#search"><i class="fa fa-search"></i> {{ ('Search') }}</a>
+                                </li>
                         @if(Auth::user())
                           @if(Auth::user()->level == 0)
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" href="{{ url('BelanjaUser') }}">{{ ('Belanja Anda') }}</a>
+                                    <a class="nav-link text-white" href="{{ url('BelanjaUser') }}"><i class="fa fa-shopping-cart"></i> {{ ('Belanja Anda') }}</a>
                                 </li>
                           @endif
                         @endif
