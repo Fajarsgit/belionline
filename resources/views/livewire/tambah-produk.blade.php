@@ -20,6 +20,18 @@
 				</span>
 				@enderror
 
+				<label for="hargasebelumdiskon" class="col-md-12 col-form-label text-md-left">{{ ('Harga Sebelum Discount %') }}</label>
+
+				<input id="hargasebelumdiskon" type="number"
+				class="form-control @error('hargasebelumdiskon') is-invalid @enderror"
+				wire:model="hargasebelumdiskon" value="{{ old('hargasebelumdiskon') }}" required
+				autocomplete="hargasebelumdiskon" autofocus>
+
+				@error('hargasebelumdiskon')
+				<span class="invalid-feedback" role="alert">
+					<strong>{{ $message }}</strong>
+				</span>
+				@enderror
 
 				<label for="harga" class="col-md-12 col-form-label text-md-left">{{ ('Harga Produk') }}</label>
 
@@ -34,18 +46,7 @@
 				</span>
 				@enderror
 
-				<label for="discount" class="col-md-12 col-form-label text-md-left">{{ ('Discount %') }}</label>
-
-				<input id="discount" type="number"
-				class="form-control @error('discount') is-invalid @enderror"
-				wire:model="discount" value="{{ old('discount') }}" required
-				autocomplete="discount" autofocus>
-
-				@error('discount')
-				<span class="invalid-feedback" role="alert">
-					<strong>{{ $message }}</strong>
-				</span>
-				@enderror
+				
 
 				<label for="berat" class="col-md-12 col-form-label text-md-left">{{ ('Berat Produk') }}</label>
 
@@ -70,7 +71,7 @@
 				<br><br>
 
 				<div class="col-md-8">
-						<button type="submit" class="btn btn-success shadow rounded-pill">Tambah Produk</button>
+						<button type="submit" class="btn btn-primary shadow rounded-pill">Tambah Produk</button>
 				</div>
 
 				

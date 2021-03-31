@@ -5,7 +5,7 @@
             <div class="col-md-3 mb-3">
             <div class="shadow p-3 mb-5 bg-white rounded" >
                 <div class="text-center">
-                <img src="{{ asset('storage/photos/'.$product->gambar) }}" width="223px" height="200px" class="shadow p-3 mb-5 bg-white rounded">
+                <img src="{{ asset('storage/photos/'.$product->gambar) }}" width="223px" height="200px" class="p-3 mb-5 rounded">
                    <div class="row mt-2">
                       <div class="col-md-12">
                          <h5><strong>{{ $product->nama }}</strong></h5>

@@ -4,24 +4,24 @@
           <div class="col-12 col-md-5 col-lg-6 order-md-2" data-aos="fade-left">
 
             <!-- Image -->
-            <img src="{{ asset('assets/1.png')}}" style="background-size: " alt="...">
+            <img src="{{ asset('assets/bg2.png')}}" style="background-size: " alt="...">
 
           </div>
           <div class="col-12 col-md-7 col-lg-6 order-md-1 mt-5" data-aos="fade-right">
 
             <!-- Heading -->
             <h5 class="display-3 text-center text-md-left fs-4 ml-3" style="color: #f9ff47">
-             <span class="text-white">BeliOnline.</span> <br>The Great <span class="text-white">Ecommerce Platform.</span>
+             <span class="text-white">BeliOnline.</span> <br><i>The Great</i> <span class="text-white">Ecommerce Platform.</span>
             </h5>
 
             <!-- Text -->
             <p class="lead text-center text-md-left text-white mt-5 ml-3">
-              Just Add it to The Cart.
+              Just Add it to The Cart!
             </p>
 
             <!-- Buttons -->
-            <div class="text-md-left ml-3">
-              <a href="#belanja" class="btn btn-primary shadow rounded-pill" role="button" data-bs-toggle="button">Let's Shop</a>
+            <div class="justify-content-center text-md-left ml-3">
+              <a href="#belanja" class="justify-content-center btn btn-primary shadow rounded-pill" role="button" data-bs-toggle="button">Let's Shop</a>
             </div>
 
           </div>
@@ -31,7 +31,7 @@
 <div id="belanja" class="container">
 	@if(Auth::user())
 	  @if(Auth::user()->level == 1)
-      <div class="col-md-3">
+      <div class="col-md-3 mb-3">
       		<a href="{{url('TambahProduk/')}}" class="btn btn-primary btn-block shadow rounded-pill" >Tambah Produk</a>
       </div>
       @endif
@@ -63,13 +63,12 @@
     		<div class="col-md-3 mb-3">
     		<div class="shadow p-3 mb-5 bg-white rounded" >
     			<div class="text-center">
-    			<img src="{{ asset('storage/photos/'.$product->gambar) }}" width="223px" height="200px" class="shadow p-3 mb-5 bg-white rounded">
-    			   <div class="row mt-2">
+    			<img src="{{ asset('storage/photos/'.$product->gambar) }}" width="223px" height="200px" class="p-3 mb-5 rounded">
+    			   <div class="row">
     			   	  <div class="col-md-12">
     			   	  	 <h5><strong>{{ $product->nama }}</strong></h5>
+                   <p><strike><i>Rp. {{ number_format($product->hargasebelumdiskon) }}</i></strike></p>
     			   	  	 <p>Rp. {{ number_format($product->harga) }}</p>
-
-
     			   	  </div>
     			   </div>
     			  <div class="row mt-2">
