@@ -17,6 +17,7 @@ class CreateBelanjasTable extends Migration
             $table->id();
             $table->integer('user_id');
             $table->integer('produk_id');
+            $table->integer('qty');
             $table->integer('total_harga');
             $table->integer('status');
             $table->timestamps();

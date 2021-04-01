@@ -12,7 +12,7 @@
 			 	</div>
 			 </div>
 			 @elseif($belanja->status == 2)
-			 <div class="card">
+			 <div class="shadow p-3 mb-5 bg-white rounded">
 			 	<div class="col-md-12">
 			 		<div class="row">
 			 			<div class="col">

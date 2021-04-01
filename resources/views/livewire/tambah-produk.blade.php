@@ -20,6 +20,19 @@
 				</span>
 				@enderror
 
+				<label for="stock" class="col-md-12 col-form-label text-md-left">{{ ('Stock') }}</label>
+				
+				<input id="stock" type="number" 
+				class="form-control @error('stock') is-invalid @enderror"
+				wire:model="stock" value="{{ old('stock') }}" required 
+				autocomplete="stock" autofocus>
+
+				@error('stock')
+				<span class="invalid-feedback" role="alert">
+					<strong>{{ $message }}</strong>
+				</span>
+				@enderror
+
 				<label for="hargasebelumdiskon" class="col-md-12 col-form-label text-md-left">{{ ('Harga Sebelum Discount %') }}</label>
 
 				<input id="hargasebelumdiskon" type="number"

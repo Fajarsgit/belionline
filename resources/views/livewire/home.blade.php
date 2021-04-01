@@ -72,6 +72,7 @@
     			   <div class="row">
     			   	  <div class="col-md-12">
     			   	  	 <h5><strong>{{ $product->nama }}</strong></h5>
+                   <span class="badge badge-success shadow rounded-pill mb-3">Available Stock: {{ $product->stock }}</span>
                    <p style="color: grey;"><strike><i>Rp. {{ number_format($product->hargasebelumdiskon) }}</i></strike></p>
     			   	  	 <p>Rp. {{ number_format($product->harga) }}</p>
     			   	  </div>

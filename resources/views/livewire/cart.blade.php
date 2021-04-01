@@ -10,6 +10,8 @@
              <div class="row">
                 <div class="col-md-12">
                    <h5><strong>{{ $product->nama }}</strong></h5>
+                    <span class="badge badge-success shadow mb-3">Available Stock: {{ $product->stock }}</span>
+
                    <td><input id="qty" wire:model="qty" type="number" placeholder="Select Order Quantity" class="input-number"  data-min="1" data-max="100" value="Input" required="true"></td>
                         <p>Rp. {{ number_format($product->harga) }}</p>
                 </div>

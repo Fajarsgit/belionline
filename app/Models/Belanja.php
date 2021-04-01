@@ -12,6 +12,7 @@ class Belanja extends Model
 
     	'user_id',
     	'produk_id',
+    	'qty',
     	'total_harga',
     	'status',
     ];
