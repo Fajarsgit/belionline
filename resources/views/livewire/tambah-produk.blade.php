@@ -137,13 +137,13 @@
 
 							<td>
 								@if($pesanan->status == 0)
-								<strong>Pesanan Belum ditambahkan Ongkir</strong>
+								<strong><span class="badge badge-warning shadow rounded-pill">Pesanan Belum ditambahkan Ongkir</span></strong>
 								@endif
 								@if($pesanan->status == 1)
-								<strong>Pesanan Sudah ditambahkan Ongkir</strong>
+								<strong><span class="badge badge-primary shadow rounded-pill">Pesanan Sudah ditambahkan Ongkir</span></strong>
 								@endif
 								@if($pesanan->status == 2)
-								<strong>Pesanan Telah dipilih Pembayarannya</strong>
+								<strong><span class="badge badge-success shadow rounded-pill">Pesanan Telah dipilih Pembayarannya</span></strong>
 								@endif
 							</td>
 
