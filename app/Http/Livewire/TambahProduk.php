@@ -7,13 +7,15 @@ use App\Models\Produk;
 use App\Models\Belanja;
 use Illuminate\Support\Facades\Storage;
 use Livewire\WithFileUploads;
+use Livewire\WithPagination;
 use Livewire\Component;
 
 class TambahProduk extends Component
 {   
 	public $nama,$stock,$hargasebelumdiskon,$harga,$berat,$gambar;
 	use WithFileUploads;
-	public $belanja = [];
+	use WithPagination;
+	
 	public $produk = [];
 	public function mount()
 	{
@@ -84,8 +86,8 @@ class TambahProduk extends Component
     {
     	if(Auth::user())
 		{
-			$this->belanja = Belanja::where('user_id',Auth::user()->id)->get();
+			$this->belanja = Belanja::where('user_id',Auth::user()->id)->paginate(5);
 		}
-        return view('livewire.tambah-produk')->extends('layouts.app')->section('content');
+        return view('livewire.tambah-produk', ['belanja' => $this->belanja ])->extends('layouts.app')->section('content');
     }
 }

@@ -73,8 +73,15 @@
                         @if(Auth::user())
                           @if(Auth::user()->level == 0)
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" href="{{ url('BelanjaUser') }}"><i class="fa fa-shopping-cart"></i> {{ ('Belanja Anda') }}</a>
+                                    <a class="btn btn-warning btn-block shadow rounded-pill text-white" href="{{ url('BelanjaUser') }}"><i class="fa fa-shopping-cart"></i> {{ ('Belanja Anda') }}</a>
                                 </li>
+                          @endif
+                        @endif
+                        @if(Auth::user())
+                          @if(Auth::user()->level == 1)
+                          <div class="">
+                                <a href="{{url('TambahProduk/')}}" class="btn btn-warning btn-block shadow rounded-pill" style="color: white;">Admin Panel</a>
+                          </div>
                           @endif
                         @endif
                         @guest

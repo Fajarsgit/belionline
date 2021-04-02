@@ -103,6 +103,11 @@
 		
 	</div>
     <div class="container" style="margin-top: 100px;">
+    	<style>
+    		nav svg{
+    			height: 20px;
+    		}
+    	</style>
 	<div class="row mt-5">
 		<div class="col">
 			<div class="table-borderless">
@@ -161,6 +166,7 @@
 						@endforelse
 					</tbody>
 				</table>
+				{{ $belanja->links() }}
 			</div>
 		</div>
 	</div>
