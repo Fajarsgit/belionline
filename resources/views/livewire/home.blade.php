@@ -32,7 +32,7 @@
 	@if(Auth::user())
 	  @if(Auth::user()->level == 1)
       <div class="col-md-3 mb-3">
-      		<a href="{{url('TambahProduk/')}}" class="btn btn-primary btn-block shadow rounded-pill" >Tambah Produk</a>
+      		<a href="{{url('TambahProduk/')}}" class="btn btn-primary btn-block shadow rounded-pill" >Admin Panel</a>
       </div>
       @endif
     @endif

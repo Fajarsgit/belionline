@@ -11,6 +11,7 @@ class Belanja extends Model
     protected $fillable = [
 
     	'user_id',
+    	'name',
     	'produk_id',
     	'qty',
     	'total_harga',

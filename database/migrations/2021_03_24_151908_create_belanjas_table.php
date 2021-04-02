@@ -16,6 +16,7 @@ class CreateBelanjasTable extends Migration
         Schema::create('belanjas', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
+            $table->string('name');
             $table->integer('produk_id');
             $table->integer('qty');
             $table->integer('total_harga');

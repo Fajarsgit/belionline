@@ -42,6 +42,7 @@ class Cart extends Component
         Belanja::create(
             [
                 'user_id' => Auth::user()->id,
+                'name' => Auth::user()->name,
                 'qty' => $this->qty,
                 'total_harga' => $this->qty*$this->product->harga,
                 'produk_id' => $this->product->id,

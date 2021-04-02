@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use Illuminate\Support\Facades\Auth;
 use App\Models\Produk;
+use App\Models\Belanja;
 use Illuminate\Support\Facades\Storage;
 use Livewire\WithFileUploads;
 use Livewire\Component;
@@ -12,6 +13,8 @@ class TambahProduk extends Component
 {   
 	public $nama,$stock,$hargasebelumdiskon,$harga,$berat,$gambar;
 	use WithFileUploads;
+	public $belanja = [];
+	public $produk = [];
 	public function mount()
 	{
 		if (Auth::user()) 
@@ -61,8 +64,28 @@ class TambahProduk extends Component
 			return redirect()->to('');
 	}
 
+	public function destroy($pesanan_id)
+	{
+		$pesanan = Belanja::find($pesanan_id);
+		$pesanan->delete();
+	}
+
+	public function show($id)
+	{
+		$p->id = Produk::find($id);
+	}
+
+	public function update($id)
+	{
+		$pesanan = Belanja::find($id);
+	}
+
     public function render()
     {
+    	if(Auth::user())
+		{
+			$this->belanja = Belanja::where('user_id',Auth::user()->id)->get();
+		}
         return view('livewire.tambah-produk')->extends('layouts.app')->section('content');
     }
 }
