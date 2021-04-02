@@ -109,7 +109,7 @@
 				<table class="table text-center shadow p-3 mb-5 bg-white rounded">
 					<thead>
 						<tr>
-							<h1 class="text-center">Orders Table</h1>
+							<div class="card-header text-center">{{ ('Orders Table') }}</div>
 							<td>No.</td>
 							<td>Tanggal Pesan</td>
 							<td>Nama</td>
