@@ -17,7 +17,7 @@
 			 		<div class="row">
 			 			<div class="col">
 			 				<table class="table" style="border-top : hidden">
-			 					<tr>
+			 					<!-- <tr>
 			 						<td>Virtual Akun Number</td>
 			 						<td>:</td>
 			 						<td>{{$va_number}}</td>
@@ -26,9 +26,9 @@
 			 						<td>Bank</td>
 			 						<td>:</td>
 			 						<td>{{$bank}}</td>
-			 					</tr>
+			 					</tr> -->
 			 					<tr>
-			 						<td>Total Harga</td>
+			 						<td>Total Pembayaran</td>
 			 						<td>:</td>
 			 						<td>{{$gross_amount}}</td>
 			 					</tr>

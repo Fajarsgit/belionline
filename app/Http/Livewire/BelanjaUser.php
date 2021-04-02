@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use App\Models\Belanja;
+use App\Models\Produk;
 
 class BelanjaUser extends Component
 {	
