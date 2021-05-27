@@ -70,6 +70,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link text-white" href="#search"><i class="fa fa-search"></i> {{ ('Search') }}</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="#news">{{ ('Healthy Trends') }}</a>
+                                </li>
                         @if(Auth::user())
                           @if(Auth::user()->level == 0)
                                 <li class="nav-item">
@@ -124,11 +127,10 @@
             @yield('content')
         </main>
     </div>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0052d6" fill-opacity="1" d="M0,96L48,117.3C96,139,192,181,288,197.3C384,213,480,203,576,213.3C672,224,768,256,864,245.3C960,235,1056,181,1152,149.3C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
     <!-- Start Footer Area -->
-    <footer class="footer pt-5" style="background-color: #0052d6">
+    <footer class="footer mt-5 pt-5" style="background-color: #ffff">
         <!-- Footer Top -->
-        <div class="footer-top section">
+        <div class="footer-top section mt-5 pt-5">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-5 col-md-6 col-12">
@@ -139,34 +141,34 @@
                             </div>
                             
                             <p class="text"></p>
-                            <p class="call text-white">Got Question? Call us 24/7<span><a href="tel:123456789"></a></span></p>
+                            <p class="call shadow" style="color: #1fc7ff">Got Question? Call us 24/7<span><a href="tel:123456789"></a></span></p>
                         </div>
                         <!-- End Single Widget -->
                     </div>
                     <div class="col-lg-2 col-md-6 col-12">
                         <!-- Single Widget -->
-                        <div class="single-footer links text-white">
-                            <h4>Informations</h4>
+                        <div class="single-footer ml-5" style="color: #1fc7ff">
+                            <h4 class="shadow">Informations</h4>
                             <ul>
-                                <p class="text-white">About Us</p>
-                                <p class="text-white">Faq</p>
-                                <p class="text-white">Terms & Conditions</p>
-                                <p class="text-white">Contact Us</p>
-                                <p class="text-white">Help</p>
+                                <p class="" style="color: #1fc7ff">About Us</p>
+                                <p class="" style="color: #1fc7ff">Faq</p>
+                                <p class="" style="color: #1fc7ff">Terms & Conditions</p>
+                                <p class="" style="color: #1fc7ff">Contact Us</p>
+                                <p class="" style="color: #1fc7ff" >Help</p>
                             </ul>
                         </div>
                         <!-- End Single Widget -->
                     </div>
                     <div class="col-lg-2 col-md-6 col-12">
                         <!-- Single Widget -->
-                        <div class="">
-                            <h4 class="text-white">Services</h4>
+                        <div class="ml-5">
+                            <h4 class="shadow" style="color: #1fc7ff">Services</h4>
                             <ul>
-                                <p class="text-white">Payment Methods</p>
-                                <p class="text-white">Money-back</p>
-                                <p class="text-white">Returns</p>
-                                <p class="text-white">Shipping</p>
-                                <p class="text-white">Privacy Policy</p>
+                                <p class="" style="color: #1fc7ff">Payment Methods</p>
+                                <p class="" style="color: #1fc7ff">Money-back</p>
+                                <p class="" style="color: #1fc7ff">Returns</p>
+                                <p class="" style="color: #1fc7ff">Shipping</p>
+                                <p class="" style="color: #1fc7ff">Privacy Policy</p>
                             </ul>
                         </div>
                         <!-- End Single Widget -->
@@ -194,9 +196,9 @@
             <div class="container">
                 <div class="inner">
                     <div class="row">
-                        <div class="col-lg-6 col-12">
-                            <div class="left">
-                                <p class="text-white">Copyright © {{date('Y')}} BeliOnline.  -  All Rights Reserved.</p>
+                        <div class="col-lg-6 col-12 mb-2">
+                            <div class="center">
+                                <p class="text-center shadow" style="color: #1fc7ff">Copyright © {{date('Y')}} BeliOnline.  -  All Rights Reserved.</p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-12">
@@ -211,14 +213,23 @@
     </footer>
     <!-- /End Footer Area -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.3/smooth-scroll.js"></script>
+<script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 <script>
   AOS.init();
 </script>
+@livewireScripts
+<script>
+    window.livewire.on('updatedData',()=>{
+            $('#updateModal').modal('hide');
+    })
+</script>
+<script>window.addEventListener(show.form, event =>{$('.alert').alert('close')})</script>
 </body>
  
 </html>

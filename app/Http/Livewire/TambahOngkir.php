@@ -34,6 +34,7 @@ class TambahOngkir extends Component
     	if(!$this->provinsi_id || !$this->kota_id || !$this->jasa)
     	{
     		return;
+			dd(kota_id);
     	}
 
     	//mengambil data produk
@@ -44,11 +45,11 @@ class TambahOngkir extends Component
     	$cost = $rajaOngkir->ongkosKirim([
 
     			'origin' => 55, //Kota Bekasi
-    			'destination' => $this->kota_id,
+    			'destination' => $this->kota_id, 
     			'weight' => $produk->berat,
     			'courier' => $this->jasa
     	])->get();
-
+		
     	
 
     	//nama jasa

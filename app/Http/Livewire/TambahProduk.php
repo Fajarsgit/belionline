@@ -12,11 +12,38 @@ use Livewire\Component;
 
 class TambahProduk extends Component
 {   
-	public $nama,$stock,$hargasebelumdiskon,$harga,$berat,$gambar;
+	public $nama,$stock,$hargasebelumdiskon,$harga,$berat,$gambar,$nama_gambar;
 	use WithFileUploads;
 	use WithPagination;
 	
-	public $produk = [];
+	public $products = [];
+	public $updateStateId = 0;
+	public function show($id)
+    {
+        if(!Auth::user())
+        {
+            return redirect()->route('login');
+        }
+        // //mencari produk
+        $products = Produk::find($id);
+       
+        $this->validate([
+                'qty' => 'required'
+
+        ]);
+
+        
+        Belanja::create(
+            [
+                'user_id' => Auth::user()->id,
+                'total_harga' => $this->qty*$produk->harga,
+                'produk_id' => $produk->id,
+                'status' => 0
+            ]
+        );
+
+        return view('livewire.tambah-produk');
+    }
 	public function mount()
 	{
 		if (Auth::user()) 
@@ -71,23 +98,64 @@ class TambahProduk extends Component
 		$pesanan = Belanja::find($pesanan_id);
 		$pesanan->delete();
 	}
-
-	public function show($id)
+	public function delete($id)
 	{
-		$p->id = Produk::find($id);
+		$this->products = Produk::find($id);
+		$this->products->delete();
+	}
+	
+
+	public function showUpdateForm($id)
+	{
+		$this->products = Produk::find($id);
+		$this->nama = $this->products->nama;
+		$this->stock = $this->products->stock;
+		$this->hargasebelumdiskon = $this->products->hargasebelumdiskon;
+		$this->harga = $this->products->harga;
+		$this->berat = $this->products->berat;
+		$this->nama_gambar = $this->products->gambar;
+		$this->updateStateId = $id;
 	}
 
 	public function update($id)
 	{
-		$pesanan = Belanja::find($id);
+		//validasi
+		$this->validate(
+			[
+				'nama' => 'required',
+				'stock' => 'required',
+				'hargasebelumdiskon' => 'required',
+				'harga' => 'required',
+				'berat' => 'required',
+				'gambar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
+			]
+		);
+		//pemrosesan data file gambar
+		$this->nama_gambar = md5($this->gambar . microtime()).'.'.$this->gambar->extension();
+		Storage::disk('public')->putFileAs('photos', $this->gambar,$this->nama_gambar);
+
+		$this->products = Produk::find($id);
+		$this->products->nama = $this->nama;
+		$this->products->stock = $this->stock;
+		$this->products->hargasebelumdiskon = $this->hargasebelumdiskon;
+		$this->products->harga = $this->harga;
+		$this->products->berat = $this->berat;
+		$this->products->gambar = $this->nama_gambar;
+		
+		$this->products->save();
+		$this->emit('updatedData');
+		$this->updateStateId = 0;
 	}
 
     public function render()
     {
-    	if(Auth::user())
-		{
+			$this->products = Produk::all();
 			$this->belanja = Belanja::where('user_id',Auth::user()->id)->paginate(5);
-		}
+			
+			if(!$this->belanja)
+			{
+				return redirect()->to('');
+			}
         return view('livewire.tambah-produk', ['belanja' => $this->belanja ])->extends('layouts.app')->section('content');
     }
 }

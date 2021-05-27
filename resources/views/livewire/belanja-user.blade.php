@@ -5,6 +5,9 @@
     		}
     	</style>
 	<div class="row mt-5">
+	<div id="belanja" class="container-fluid">
+          <h1 class="text-center mb-5" style="color: grey;"><i class="fa fa-shopping-cart"></i> Cart</h1>
+    	<div class="row mt-4">
 		<div class="col">
 			<div class="table-borderless">
 				<table class="table text-center shadow p-3 mb-5 bg-white rounded">
@@ -35,13 +38,15 @@
 
 							<td>
 								@if($pesanan->status == 0)
-								<span class="badge badge-warning shadow rounded-pill"><strong>Pesanan Belum ditambahkan Ongkir</strong></span>
+								<span class="badge badge-warning shadow rounded-pill"><strong>Pesanan Belum ditambahkan Biaya Pengiriman</strong></span>
 								@endif
 								@if($pesanan->status == 1)
-								<span class="badge badge-primary shadow rounded-pill"><strong>Pesanan Sudah ditambahkan Ongkir</strong></span>
+								<span class="badge badge-primary shadow rounded-pill"><strong>Pesanan Sudah ditambahkan Biaya Pengiriman</strong></span>
 								@endif
 								@if($pesanan->status == 2)
-								<span class="badge badge-success shadow rounded-pill"><strong>Pesanan Anda Sedang Diproses</strong></span>
+								<span class="badge badge-success shadow rounded-pill p-3"><strong>Pesanan Anda Sedang Diproses <br>
+								 Apabila Pembayaran Pesanan Valid <br>
+								 Maka Pesanan Anda Akan Segera Dikirim Ke Alamat Anda</strong></span>
 								@endif
 							</td>
 
@@ -49,7 +54,7 @@
 
 							<td>
 								@if($pesanan->status == 0)
-								<a href="{{ url('TambahOngkir/'.$pesanan->id) }}" class="btn btn-warning btn-block shadow rounded-pill">Tambahkan Ongkir</a> 
+								<a href="{{ url('TambahOngkir/'.$pesanan->id) }}" class="btn btn-warning btn-block shadow rounded-pill">Tambahkan Biaya Pengiriman</a> 
 								@endif
 								@if($pesanan->status == 1)
 								<a href="{{ url('Bayar/'.$pesanan->id) }}" class="btn btn-primary btn-block shadow rounded-pill">Pilih Pembayaran</a> 

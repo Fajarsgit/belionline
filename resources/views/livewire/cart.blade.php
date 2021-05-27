@@ -1,7 +1,7 @@
-<div class="container" style="margin-top: 50px;">
-    <section class="products mb-5">
-      <div id="belanja" class="container-fluid">
-          <h1 class="text-center mb-5" style="color: grey;"><i class="fa fa-shopping-cart"></i> Products</h1>
+<div class="container" style="margin-top: 70px;">
+    <section class="products mb-5 mt-3">
+      <div id="belanja" class="container-fluid mt-3">
+          <h1 class="text-center mb-5 mt-3" style="color: grey;"><i class="fa fa-shopping-cart"></i> Order Details</h1>
       <div class="row">
         <div class="col-md-3 mb-3">
         <div class="shadow p-3 mb-5 bg-white rounded" >

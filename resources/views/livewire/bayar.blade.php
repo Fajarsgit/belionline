@@ -8,12 +8,13 @@
 			 		<img class="justify-content-center text-center" src="{{ asset('assets/Payment.png')}}" style="size: 50px;" alt="..."></img>
 			 	</div>
 			 	<div class="col-md-12 justify-content-center">
-			 		<button id="pay-button" type="button" class="btn btn-primary justify-content-center text-center">Choose Payment</button>
+			 		<button id="pay-button" type="button" class="btn btn-primary justify-content-center text-center shadow rounded-pill">Choose Payment</button>
 			 	</div>
 			 </div>
 			 @elseif($belanja->status == 2)
 			 <div class="shadow p-3 mb-5 bg-white rounded">
 			 	<div class="col-md-12">
+				 <h1 class="text-center mb-5" style="color: grey;"><i class="fa fa-info"></i> Payment Information</h1>
 			 		<div class="row">
 			 			<div class="col">
 			 				<table class="table" style="border-top : hidden">

@@ -37,7 +37,7 @@
       @endif
     @endif
     <!-- search columns -->
-    <div id="search" class="row ml-5 justify-content-center">
+    <div id="search" class="row justify-content-center">
     	<div class="col-md-6">
         <div>
         <h1 class="text-center mb-5 pt-5" style="color: grey; padding-top: 200px;"><i class="fa fa-search"></i> Livesearch</h1>
@@ -58,17 +58,17 @@
     	</div>
         <!-- end search columns -->
     </div>
-    
+   </section>
 
     <section class="products mb-5 mt-4">
-      <div id="belanja" class="container-fluid mt-5">
+      <div id="belanja" class="container-fluid">
           <h1 class="text-center mb-5 pt-5" style="color: grey;"><i class="fa fa-shopping-cart"></i> Products</h1>
-    	<div class="row mt-4">
+    	<div class="row mt-4 ml-1 mr-1 ">
     		@foreach($products as $product)
-    		<div class="col-md-3 mb-3 mt-5">
-    		<div class="shadow p-3 mb-5 bg-white rounded" >
+    		<div data-aos="fade-down" class="col-md-3 mb-3 mt-5">
+    		<div class="shadow mb-5 bg-white rounded" >
     			<div class="text-center">
-    			<img src="{{ asset('storage/photos/'.$product->gambar) }}" class="card-img-top p-3 rounded">
+    			<img src="{{ asset('storage/photos/'.$product->gambar) }}" class="card-img-top rounded">
     			   <div class="row">
     			   	  <div class="col-md-12">
     			   	  	 <h5><strong>{{ $product->nama }}</strong></h5>
@@ -79,7 +79,7 @@
     			   </div>
     			  <div class="row mt-2">
     			  	 <div class="col-md-12">
-    			  	 <a href="{{ url('Cart/'.$product->id) }}" class="btn btn-primary shadow rounded-pill" style=""><i class="fa fa-shopping-cart"></i>
+    			  	 <a href="{{ url('Cart/'.$product->id) }}" class="btn btn-primary shadow rounded-pill mb-3" style=""><i class="fa fa-shopping-cart"></i>
     			  	 	Detail
     			  	 </a>
     			  	 </div>
@@ -91,7 +91,15 @@
     		@endforeach
     	</div>
      </div>
-    </section>
- </section>
-  </div>    
+     </div> 
+   
+ 
+     
+  <section>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#1fc7ff" fill-opacity="1" d="M0,96L48,117.3C96,139,192,181,288,197.3C384,213,480,203,576,213.3C672,224,768,256,864,245.3C960,235,1056,181,1152,149.3C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+    <div class="container-fluid pt-3" style="background-color: #1fc7ff;">
+      <h1 class="text-center mb-5" style="color: white;">Healthy Trends</h1>
+      <div id="news" class="row ml-1 mr-1" style="background-color: #fffff;"></div>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#1fc7ff" fill-opacity="1" d="M0,96L48,117.3C96,139,192,181,288,197.3C384,213,480,203,576,213.3C672,224,768,256,864,245.3C960,235,1056,181,1152,149.3C1248,117,1344,107,1392,101.3L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
 

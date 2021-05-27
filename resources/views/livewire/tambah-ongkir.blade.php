@@ -3,7 +3,7 @@
 		<div class="col-md-8">
 			<div class="shadow p-3 mb-5 bg-white rounded">
 				
-				<div class="shadow p-3 mb-5 bg-white rounded text-center">{{ ('Tambah Ongkir') }}</div>
+				<div class="shadow p-3 mb-5 bg-white rounded text-center"><strong>{{ ('Tambah Biaya Pengiriman') }}</strong></div>
 
 				<div class="card-body">
 					
@@ -47,7 +47,7 @@
 
 
 					    <div class="col-md-6">
-					    	<button type="submit" class="btn btn-primary shadow rounded-pill">Lihat Daftar Ongkir</button>
+					    	<button type="submit" class="btn btn-primary shadow rounded-pill">Lihat Daftar Biaya</button>
 					    </div>
 					</form>
 				</div>
@@ -72,7 +72,7 @@
 								</div>
 								<div class="row justify-content-center">
 									<button class="btn btn-primary shadow rounded-pill" wire:click="save_ongkir({{ $r['biaya'] }})">
-										Tambah Sebagai Ongkir
+										Pilih
 									</button>
 								</div>
 							</div>
